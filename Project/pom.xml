@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.toobye</groupId>
+  <artifactId>common</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <name>common</name>
+  <url>http://www.toobye.com</url>
+  
+  <repositories>
+    <repository>
+        <id>io.spring.repo.maven.release</id>
+        <url>http://repo.spring.io/release/</url>
+        <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <!-- 测试 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- JSR-305 -->
+	<dependency>
+		<groupId>com.google.code.findbugs</groupId>
+		<artifactId>annotations</artifactId>
+		<version>2.0.2</version>
+	</dependency>
+	
+	<!-- 常用处理：com.toobye.common.base.ArrayUtils/EnumUtils/RandomUtils/RangeUtils/StringUtils/SystemUtils/com.toobye.common.time.DateUtils -->
+    <dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.4</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>17.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-math</artifactId>
+		<version>2.2</version>
+	</dependency>
+	<!-- Cron表达式解析：com.toobye.common.time -->
+	<dependency>
+		<groupId>org.quartz-scheduler</groupId>
+		<artifactId>quartz</artifactId>
+		<version>2.1.3</version>
+	</dependency>
+	<!-- 编码处理：com.toobye.common.codec.Binary/Hex/UrlCodec -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.9</version>
+	</dependency>
+	<!-- IO管理：com.toobye.common.io -->
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.4</version>
+	</dependency>
+	<!-- 反射机制：com.toobye.common.reflect -->
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>1.8.3</version>
+	</dependency>
+	<!-- 反射机制实现类查找等功能：com.toobye.common.reflect-->
+    <dependency>
+         <groupId>org.reflections</groupId>
+         <artifactId>reflections</artifactId>
+         <version>0.9.9-RC1</version>
+    </dependency>
+    <!-- Zip压缩： com.toobye.common.compress-->
+    <dependency>
+		<groupId>net.lingala.zip4j</groupId>
+		<artifactId>zip4j</artifactId>
+		<version>1.3.2</version>
+	</dependency>
+	<!-- 命令执行： com.toobye.common.exec -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-exec</artifactId>
+		<version>1.1</version>
+	</dependency>
+	<!-- ssh远程执行： com.toobye.common.exec -->
+	<dependency>
+		<groupId>org.apache.sshd</groupId>
+		<artifactId>sshd-core</artifactId>
+		<version>0.10.1</version>
+	</dependency>
+	<!-- 网络：com.toobye.common.net -->
+	<dependency>
+		<groupId>commons-net</groupId>
+		<artifactId>commons-net</artifactId>
+		<version>3.3</version>
+	</dependency>
+	<!-- 日志 -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>2.5.2</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.5.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-email</artifactId>
+		<version>1.4</version>
+	</dependency>
+  </dependencies>
+</project>
