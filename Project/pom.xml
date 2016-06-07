@@ -8,14 +8,6 @@
   <name>common</name>
   <url>http://www.toobye.com</url>
   
-  <repositories>
-    <repository>
-        <id>io.spring.repo.maven.release</id>
-        <url>http://repo.spring.io/release/</url>
-        <snapshots><enabled>false</enabled></snapshots>
-    </repository>
-  </repositories>
-  
   <dependencies>
     <!-- 测试 -->
     <dependency>

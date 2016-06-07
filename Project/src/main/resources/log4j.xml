@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="debug"/>
+		<param name="target" value="System.out"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} (%F:%L) %5p - %m%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="dailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="debug"/>
+		<param name="File" value="${SERVICE_LOG_FILE_NAME}"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} (%F:%L) %5p - %m%n"/>
+		</layout>
+	</appender>
+
+	<!--	Database Operation logging Configuration Start-->
+	<!--	datasource-->
+	<logger additivity="false" name = "org.apache.ibatis.datasource.pooled.PooledDataSource">
+		<level value="warn"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<logger additivity="false" name = "org.apache.ibatis.datasource">
+		<level value="debug"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<logger additivity="false" name = "java.sql.Connection">
+		<level value="debug"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<logger additivity="false" name = "java.sql.Statement">
+		<level value="debug"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<logger additivity="false" name = "java.sql.PreparedStatement">
+		<level value="debug"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<logger additivity="false" name = "java.sql.ResultSet">
+		<level value="debug"/>
+		<appender-ref ref="consoleDB"/>
+	</logger>
+	<!--	Database Operation logging Configuration End-->
+	
+	<logger name="org.springframework.beans">
+		<level value="debug" />
+	</logger>
+
+	<logger name="org.springframework.core.convert">
+		<level value="debug" />
+	</logger>
+	
+	<logger name="org.springframework.oxm">
+		<level value="debug" />
+	</logger>
+	
+	<!-- apache开源架包的日志级别 -->
+	<logger name="org.apache.commons.beanutils">
+		<level value="warn" />
+	</logger>
+	
+	<logger additivity="false" name = "org.apache.sshd">
+		<level value="error"/>
+	</logger>
+	
+	<root>
+		<priority value="debug"/>
+		<appender-ref ref="console"/>
+		<appender-ref ref="dailyRollingFile"/>
+	</root>
+
+</log4j:configuration>
